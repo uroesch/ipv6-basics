@@ -8,18 +8,686 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="dist/theme/moon.css" id="theme">
 
 		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+    <!-- IPV6 custom -->
+    <!-- Fonts -->
+    <link rel="stylesheet" href="lib/font/font-awesome/css/font-awesome.min.css">
+    <!-- Custom style -->
+    <link rel="stylesheet" href="lib/css/ipv6.css">
+  </head>
+
+  <body>
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <section>
+            <h1>IPv6 Basics</h1>
+            <h2>Address Format</h3>
+          </section>
+
+          <section>
+            <!-- header -->
+            <div class="ipv4 col-35 row-10 top header left">
+              <h2>IPv4</h2>
+            </div>
+            <div class="ipv6 col-65 row-10 top header right">
+              <h2>IPv6</h2>
+            </div>
+            <!-- content -->
+            <div class="ipv4 col-35 row-90 bottom content left wrapper">
+              <div class="text-box">
+                <h1 class="fragment visible" data-fragment-index="0">32bit</h1>
+                <h3 style="height: 2em;" class="fragment visible" data-fragment-index="1">4 294 967 296</h3>
+                <ul style="height: 8em;" class="fragment visible" data-fragment-index="2">
+                  <li>08: 11111111</li>
+                  <li>16: 11111111</li>
+                  <li>24: 11111111</li>
+                  <li>32: 11111111</li>
+               </ul>
+              </div>
+            </div>
+
+            <div class="ipv6 col-65 row-90 bottom content right wrapper">
+              <div class="text-box">
+                <h1 class="fragment visible" data-fragment-index="00">128bit</h1>
+                <h3 style="line-height: 1em;" class="fragment visible" data-fragment-index="1">340 282 366 920 938 463<br />463 374 607 431 768 211 456</h3>
+                <ul class="fragment visible" data-fragment-index="2">
+                  <li>016: 1111 1111 1111 1111 </li>
+                  <li>032: 1111 1111 1111 1111 </li>
+                  <li>048: 1111 1111 1111 1111 </li>
+                  <li>064: 1111 1111 1111 1111 </li>
+                  <li>080: 1111 1111 1111 1111 </li>
+                  <li>096: 1111 1111 1111 1111 </li>
+                  <li>112: 1111 1111 1111 1111 </li>
+                  <li>128: 1111 1111 1111 1111 </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <!-- header -->
+            <div class="ipv4 col-35 row-10 top header left">
+              <h2>IPv4</h2>
+            </div>
+            <div class="ipv6 col-65 row-10 top header right">
+              <h2>IPv6</h2>
+            </div>
+            <!-- content -->
+            <div class="ipv4 col-35 row-90 bottom content left wrapper">
+              <div class="text-box">
+                <h1 class="fragment visible" data-fragment-index="0">4 Octets</h1>
+                <h3 class="fragment visible" data-fragment-index="1">1 Octet is 8 Bit each</h3>
+                <h4 class="fragment visible" data-fragment-index="2">Converted to decimal</h4>
+                <h4 class="fragment visible" data-fragment-index="2">and delimited by a dot</h4>
+                <h2 class="fragment visible" data-fragment-index="3"><i class="fa fa-arrow-circle-down"></i></h2>
+                <h3 class="fragment visible" data-fragment-index="3">255.255.255.255</h3>
+                <p class="pad">&nbsp;</p>
+              </div>
+            </div>
+
+            <div class="ipv6 col-65 row-90 bottom content right wrapper">
+              <div class="text-box">
+                <h1 class="fragment visible" data-fragment-index="0">32 Nibbles</h1>
+                <h3 class="fragment visible" data-fragment-index="1">1 Nibble is 4 Bit each</h3>
+                <h4 class="fragment visible" data-fragment-index="2">Converted to Hexadecimal</h4>
+                <h4 class="fragment visible" data-fragment-index="2">4 Nibbles are grouped and delimited by a colon</h4>
+                <h2 class="fragment visible" data-fragment-index="3"><i class="fa fa-arrow-circle-down"></i></h2>
+                <h3 class="fragment visible" data-fragment-index="3">ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff</h3>
+                <p class="pad">&nbsp;</p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2 style="margin-top: -100px; margin-bottom: 100px;">Shortening IPv6 Addresses</h2>
+            <div>
+              <pre class="shortening fragment current-visible" data-fragment-index="0">2001:0db8:0000:0000:0000:0000:0000:0001</pre>
+              <pre class="shortening fragment current-visible" data-fragment-index="1">2001:<strike>0</strike>db8:<strike>000</strike>0:<strike>000</strike>0:<strike>000</strike>0:<strike>000</strike>0:<strike>000</strike>0:<strike>000</strike>1</pre>
+              <pre class="shortening fragment current-visible" data-fragment-index="2">2001: db8:   0:   0:   0:   0:   0:   1</pre>
+              <pre style="font-size: 1.4em;" class="shortening fragment current-visible" data-fragment-index="3">2001:db8:0:0:0:0:0:1</pre>
+              <pre style="font-size: 1.4em;" class="shortening fragment current-visible" data-fragment-index="4">2001:db8:<strike>0:0:0:0:0</strike>:1</pre>
+              <pre style="font-size: 1.4em;" class="shortening fragment current-visible" data-fragment-index="5">2001:db8:         :1</pre>
+              <pre style="font-size: 2em;" class="shortening fragment current-visible" data-fragment-index="6">2001:db8::1</pre>
+            </div>
+          </section>
+
+          <section data-background="#000">
+            <h2>IPv6 address shortening in the wild</h2>
+            <h3>Linux</h3>
+            <pre class="sample" style="font-size: 0.9em;">
+
+# ip addr add <span id="highlight">2001:db8:0:0:0:0:0:1</span>/64 dev eth0
+
+
+# ip -6 addr show
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qlen 1000
+    inet6 <span id="highlight">2001:db8::1</span>/64 scope global
+       valid_lft forever preferred_lft forever
+            </pre>
+
+          </section>
+        </section>
+
+<!-- Localhost Address   ======================================================================================================================================== -->
+
+        <section>
+          <section>
+            <h1>IPv6 Basics</h1>
+            <h2>Localhost Address</h3>
+          </section>
+
+          <section>
+          <!-- header -->
+            <div style="clear: both;" class="ipv6 col-100 row-30 content left">
+              <h2>IPv6's localhost address is</h2>
+              <h1 data-fragment-index="0" class="fragment visible">very simple</h1>
+            </div>
+            <div data-fragment-index="1" class="fragment visible ipv4 col-50 middle row-10 header left">
+              <h2>IPv4</h2>
+            </div>
+            <div data-fragment-index="1" class="fragment visible ipv6 col-50 middle row-10 header right">
+              <h2>IPv6</h2>
+            </div>
+            <!-- content -->
+            <div data-fragment-index="1" class="fragment visible ipv4 col-50 row-50 bottom content left wrapper">
+              <div class="text-box">
+                <h2 class="fragment visible" data-fragment-index="2">localhost address</h2>
+                <h3 class="fragment visible" data-fragment-index="2"><i class="fa fa-arrow-circle-down"></i></h3>
+                <h2 class="fragment visible" data-fragment-index="2">127.0.0.1/8</h2>
+              </div>
+            </div>
+            <div data-fragment-index="1" class="fragment visible ipv6 col-50 row-50 bottom content right wrapper">
+              <div class="text-box">
+                <h2 class="fragment visible" data-fragment-index="2">localhost address</h2>
+                <h3 class="fragment visible" data-fragment-index="2"><i class="fa fa-arrow-circle-down"></i></h3>
+                <h2 class="fragment visible" data-fragment-index="2">::1/128</h2>
+              </div>
+            </div>
+          </section>
+
+          <section data-background="#000">
+            <h2>localhost address in the wild</h2>
+            <h3>Linux</h3>
+            <pre class="sample" style="line-height: 1.4em; font-size: 0.7em;">
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 <span id="highlight">::1/128</span> scope host
+       valid_lft forever preferred_lft forever
+            </pre>
+          </section>
+        </section>
+
+<!-- Link Local Address  ======================================================================================================================================== -->
+
+        <section>
+          <section>
+            <h1>IPv6 Basics</h1>
+            <h2>Link Local Address</h3>
+          </section>
+
+          <section>
+          <!-- header -->
+            <div style="clear: both;" class="ipv6 col-100 row-30 content left">
+              <h2>IPv6 requires the</h2>
+              <h1 data-fragment-index="0" class="fragment visible">Link Local Address!</h1>
+            </div>
+            <div data-fragment-index="1" class="fragment visible ipv4 col-50 middle row-10 header left">
+              <h2>IPv4</h2>
+            </div>
+            <div data-fragment-index="1" class="fragment visible ipv6 col-50 middle row-10 header right">
+              <h2>IPv6</h2>
+            </div>
+            <!-- content -->
+            <div data-fragment-index="1" class="fragment visible ipv4 col-50 row-50 bottom content left wrapper">
+              <div class="text-box">
+                <h2 class="fragment visible" data-fragment-index="2">link local range</h2>
+                <h3 class="fragment visible" data-fragment-index="2"><i class="fa fa-arrow-circle-down"></i></h3>
+                <h2 class="fragment visible" data-fragment-index="2">169.254.0.0/16</h2>
+              </div>
+            </div>
+            <div data-fragment-index="1" class="fragment visible ipv6 col-50 row-50 bottom content right wrapper">
+              <div class="text-box">
+                <h2 class="fragment visible" data-fragment-index="2">link local range</h2>
+                <h3 class="fragment visible" data-fragment-index="2"><i class="fa fa-arrow-circle-down"></i></h3>
+                <h2 class="fragment visible" data-fragment-index="2">fe80::/10</h2>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2>stateless autoconfiguration</h2>
+            <h1 data-fragment-index="0" class="fragment visible">ff:fe</h1>
+            <h1 data-fragment-index="1" class="fragment visible" style="margin-top: -0.5em; margin-bottom: -0.5em;"><i id="highlight" class="fa fa-arrow-down"></i></h1>
+            <h1 data-fragment-index="2" class="fragment visible">51:22:13:ab:ed:96</h1>
+            <h1 data-fragement-index="3" class="fragment visible"style="line-height: 0.1em;">=</h1>
+            <h1 data-fragement-index="4" class="fragment visible">51:22:13:<span id="highlight">ff:fe</span>:ab:ed:96</h1>
+          </section>
+
+          <section>
+            <h2>stateless autoconfigration</h2>
+            <h1 data-fragment-index="0" class="fragment visible" style="line-height: 1em;"><span id="highlight">51</span>:22:13:ff:fe:ab:ed:96</h1>
+            <h1 data-fragment-index="1" class="fragment visible" style="line-height: 1em;">Bin 010100<span id="highlight">0</span>1</h1>
+            <h1 data-fragment-index="2" class="fragment visible" style="line-height: 1em;">Bin 010100<span id="highlight">1</span>1</h1>
+            <h1 data-fragment-index="3" class="fragment visible" style="line-height: 1em;"><span id="highlight">53</span>:22:13:ff:fe:ab:ed:96</h1>
+          </section>
+
+          <section>
+            <h2>stateless autoconfiguration</h2>
+            <h1 data-fragment-index="0" class="fragment visible" style="line-height: 1em;">fe80::/10</h1>
+            <h1 data-fragment-index="1" class="fragment visible" style="line-height: 0.1em;">+</h1>
+            <h1 data-fragment-index="2" class="fragment visible" style="line-height: 1em;">53:22:13:ff:fe:ab:ed:96</h1>
+            <h1 data-fragment-index="3" class="fragment visible" style="line-height: 0.1em;">=</h1>
+            <h1 data-fragment-index="4" class="fragment visible" style="font-size: 3.4em; line-height: 1em;"><span id="highlight">fe80::</span>5322:13ff:feab:ed96</h1>
+          </section>
+
+          <section>
+            <h3>... this is true for almost any operting system except</h3>
+            <h1>Windows <i id="highlight" class="fa fa-windows"></i><sup>*</sup></h1>
+            <h4>* Since Vista the link-local address is randomly generated.</h4>
+          </section>
+
+
+          <section data-background="#000">
+            <h2>stateless autoconfiguration in the wild</h2>
+            <h3>Linux</h3>
+            <pre class="sample" style="line-height: 1.4em; font-size: 0.7em;">
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether <span id="highlight">00:16:17:18:ed:96</span> brd ff:ff:ff:ff:ff:ff
+    inet 192.168.7.30/24 brd 192.168.7.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 2001:8e0:2003:b200:<span id="highlight">216:17ff:fe18:ed96</span>/64 scope global dynamic
+       valid_lft 86400sec preferred_lft 14400sec
+    inet6 <span id="highlight">fe80::216:17ff:fe18:ed96</span>/64 scope link
+       valid_lft forever preferred_lft forever
+            </pre>
+          </section>
+        </section>
+
+<!-- Network Boundaries ======================================================================================================================================== -->
+
+        <section>
+          <section>
+            <h1>IPv6 Basics</h1>
+            <h2>Network Boundaries</h3>
+          </section>
+
+          <section>
+            <!-- header -->
+            <div style="clear: both;" class="ipv6 col-100 row-30 content left">
+              <h2>IPv6 has no</h2>
+              <h1 data-fragment-index="0" class="fragment visible">Network Address!</h1>
+            </div>
+            <div data-fragment-index="1" class="fragment visible ipv4 col-50 middle row-10 header left">
+              <h2>IPv4</h2>
+            </div>
+            <div data-fragment-index="1" class="fragment visible ipv6 col-50 middle row-10 header right">
+              <h2>IPv6</h2>
+            </div>
+            <!-- content -->
+            <div data-fragment-index="1" class="fragment visible ipv4 col-50 row-50 bottom content left wrapper">
+              <div class="text-box">
+                <h2 class="fragment visible" data-fragment-index="2">192.168.0.111/24</h2>
+                <h3 class="fragment visible" data-fragment-index="2"><i class="fa fa-arrow-circle-down"></i></h3>
+                <h2 class="fragment visible" data-fragment-index="2">192.168.0.0</h2>
+              </div>
+            </div>
+            <div data-fragment-index="1" class="fragment visible ipv6 col-50 row-50 bottom content right wrapper">
+              <div class="text-box">
+                <i data-fragment-index="2" style="font-size: 8em;" class="fragment visible fa fa-times"></i>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <!-- header -->
+            <div style="clear: both;" class="ipv6 col-100 row-30 content left">
+              <h2>IPv6 has no</h2>
+              <h1 data-fragment-index="0" class="fragment visible">Broadcast Address!</h1>
+            </div>
+            <div data-fragment-index="1" class="fragment visible ipv4 col-50 row-10 middle header left">
+              <h2>IPv4</h2>
+            </div>
+            <div data-fragment-index="1" class="fragment visible ipv6 col-50 row-10 middle header right">
+              <h2>IPv6</h2>
+            </div>
+            <!-- content -->
+            <div data-fragment-index="1" class="fragment visible ipv4 col-50 row-50 bottom content left wrapper">
+              <div class="text-box">
+                <h2 class="fragment visible" data-fragment-index="2">192.168.0.111/24</h2>
+                <h3 class="fragment visible" data-fragment-index="2"><i class="fa fa-arrow-circle-down"></i></h3>
+                <h2 class="fragment visible" data-fragment-index="2">192.168.0.255</h2>
+              </div>
+            </div>
+            <div data-fragment-index="1" class="fragment visible ipv6 col-50 row-50 bottom content right wrapper">
+              <div class="text-box">
+                <i data-fragment-index="2" style="font-size: 8em;" class="fragment visible fa fa-times"></i>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <!-- header -->
+            <div style="clear: both;" class="ipv6 col-100 row-30 content left">
+              <h2>The smallest IPv6 prefix is<sup>*</sup></h2>
+              <h1 data-fragment-index="0" class="fragment visible">/64</h1>
+            </div>
+            <div data-fragment-index="1" class="fragment visible ipv4 col-50 row-10 middle header left">
+              <h2>IPv4</h2>
+            </div>
+            <div data-fragment-index="1" class="fragment visible ipv6 col-50 row-10 middle header right">
+              <h2>IPv6</h2>
+            </div>
+            <!-- content -->
+            <div data-fragment-index="1" class="fragment visible ipv4 col-50 row-50 bottom content left wrapper">
+              <div class="text-box">
+                <h3 class="fragment visible" data-fragment-index="2">/32 /30 /29<br /> /28 /27 /26<br /> /25 /24 /23<br />...</h3>
+              </div>
+            </div>
+            <div data-fragment-index="1" class="fragment visible ipv6 col-50 row-50 bottom content right wrapper">
+              <div class="text-box">
+                <h1 style="font-size: 7.6em;" class="fragment visible" data-fragment-index="2">/64</h1>
+              </div>
+            </div>
+          </section>
+
+          <section data-background="#000">
+            <h2>Prefixes in the Wild</h2>
+            <h3>MacOS</h3>
+            <pre class="sample" style="font-size: 0.7em; line-height: 1.4em;">
+# ifconfig en1
+en1: flags=8863&lt;UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST&gt; mtu 1500
+  ether 00:16:ce:ff:00:f3
+  inet6 fe80::216:ceff:feff:00f3%en1 prefixlen <span id="highlight">64</span> scopeid 0x6
+  inet6 2001:db8::216:ceff:feff:00f3 prefixlen <span id="highlight">64</span> autoconf
+  inet 192.168.0.13 netmask 0xffffff00 broadcast 192.168.0.255
+  media: autoselect
+  status: active
+            </pre>
+          </section>
+        </section>
+
+<!-- Routing =========================================================================================================================================== -->
+
+        <section>
+          <section>
+            <h1>IPv6 Basics</h1>
+            <h2>Routing</h3>
+          </section>
+
+          <section>
+          <!-- header -->
+            <div style="clear: both;" class="ipv6 col-100 row-30 content left">
+              <h2>IPv6's default Route</h2>
+              <h1 data-fragment-index="0" class="fragment visible">is extremly short</h1>
+            </div>
+            <div data-fragment-index="1" class="fragment visible ipv4 col-50 middle row-10 header left">
+              <h2>IPv4</h2>
+            </div>
+            <div data-fragment-index="1" class="fragment visible ipv6 col-50 middle row-10 header right">
+              <h2>IPv6</h2>
+            </div>
+            <!-- content -->
+            <div data-fragment-index="1" class="fragment visible ipv4 col-50 row-50 bottom content left wrapper">
+              <div class="text-box">
+                <h2 class="fragment visible" data-fragment-index="2">default route</h2>
+                <h3 class="fragment visible" data-fragment-index="2"><i class="fa fa-arrow-circle-down"></i></h3>
+                <h2 class="fragment visible" data-fragment-index="2">0.0.0.0/0</h2>
+              </div>
+            </div>
+            <div data-fragment-index="1" class="fragment visible ipv6 col-50 row-50 bottom content right wrapper">
+              <div class="text-box">
+                <h2 class="fragment visible" data-fragment-index="2">default route</h2>
+                <h3 class="fragment visible" data-fragment-index="2"><i class="fa fa-arrow-circle-down"></i></h3>
+                <h2 class="fragment visible" data-fragment-index="2">::/0</h2>
+              </div>
+            </div>
+          </section>
+
+          <section data-background="#000">
+            <h2 style="margin-top: -0.8em;">Routing in the wild</h2>
+            <pre class="sample" style="margin-top: -0.4em; line-height: 1.3em; font-size: 0.8em;">
+
+
+# ip -6 route
+::1 dev lo proto kernel metric 256 pref medium
+2001:db8::/64 dev wlo1 proto ra metric 600 pref medium
+fddd:c0ff:ee:7ea::/64 dev virbr0 proto kernel metric 256 pref medium
+fe80::/64 dev virbr0 proto kernel metric 256 pref medium
+fe80::/64 dev wlo1 proto kernel metric 600 pref medium
+<span id="highlight">default</span> via fe80::c0ff:ee:7:ea dev wlo1 proto ra metric 20600 pref medium
+
+
+# ip -6 route show match ::
+<span id="highlight">default</span> via fe80::c0ff:ee:7:ea dev wlo1 proto ra metric 20600 pref medium
+            </pre>
+          </section>
+        </section>
+
+<!-- Protocol ======================================================================================================================================== -->
+
+        <section>
+          <section>
+            <h1>IPv6 Basics</h1>
+            <h2>Protocol</h3>
+          </section>
+
+          <section controls="false">
+            <!-- header -->
+            <div style="clear: both;" class="ipv6 col-100 row-30 content left">
+              <h2>IPv6 does not use</h2>
+              <h1 data-fragment-index="0" class="fragment visible" style="margin-top: -0.3em;">ARP</h1>
+              <h6 data-fragment-index="0" class="fragment visible" style="margin-top: -1em;">Address Resolution Protocol</h6>
+            </div>
+            <div data-fragment-index="1" class="fragment visible ipv4 col-50 middle row-10 header left">
+              <h2>IPv4</h2>
+            </div>
+            <div data-fragment-index="1" class="fragment visible ipv6 col-50 middle row-10 header right">
+              <h2>IPv6</h2>
+            </div>
+            <!-- content -->
+            <div data-fragment-index="1" class="fragment visible ipv4 col-50 row-50 bottom content left wrapper">
+              <div class="text-box">
+                <h2 class="fragment visible" data-fragment-index="2">ping 192.168.0.1</h2>
+                <h3 class="fragment visible" data-fragment-index="2" style="margin-top: -0.5em; margin-bottom: 0;"><i class="fa fa-arrow-circle-down"></i></h3>
+                <h2 class="fragment visible" data-fragment-index="2" style="line-height: 1em;">ARP<br />who-has 192.168.0.1</h2>
+              </div>
+            </div>
+            <div data-fragment-index="1" class="fragment visible ipv6 col-50 row-50 bottom content right wrapper">
+              <div class="text-box">
+                <h2 class="fragment visible" data-fragment-index="2">ping6 2001:db8::1</h2>
+                <h3 class="fragment visible" data-fragment-index="2" style="margin-top: -0.5em; margin-bottom: 0;"><i class="fa fa-arrow-circle-down"></i></h3>
+                <h2 class="fragment visible" data-fragment-index="2" style="line-height: 1em;">Multicast<br />ICMP6 NS ff02::1:ff00:1</h2>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <!-- header -->
+            <div style="clear: both;" class="ipv6 col-100 row-30 content left">
+              <h1>IPv6 Multicast Range</h1>
+            </div>
+            <div data-fragment-index="1" class="fragment visible ipv4 col-50 middle row-10 header left">
+              <h2>IPv4</h2>
+            </div>
+            <div data-fragment-index="1" class="fragment visible ipv6 col-50 middle row-10 header right">
+              <h2>IPv6</h2>
+            </div>
+            <!-- content -->
+            <div data-fragment-index="1" class="fragment visible ipv4 col-50 row-50 bottom content left wrapper">
+               <div class="text-box">
+                 <h1 style="margin-top: 1em;" class="fragment visible" data-fragment-index="2">224.0.0.0/4</h1>
+               </div>
+            </div>
+            <div data-fragment-index="1" class="fragment visible ipv6 col-50 row-50 bottom content right wrapper">
+              <div class="text-box">
+                <h1 style="margin-top: 1em;" class="fragment visible" data-fragment-index="2">ff00::/8</h1>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2>IPv6 replaces Broadcast with</h2>
+            <h1>Multicast</h1>
+            <pre style="text-align: left; width: 70%; line-height: 1.6em; font-size: 1.2em;">
+ff01::1
+ff02::1
+ff02::1:ff<span id="highlight">&lt;last 24 bit of ip&gt;</span>
+            </pre>
+          </section>
+
+          <section data-background="#000">
+            <h2 style="margin-top: -0.5em;">Multicast Sample</h2>
+            <pre class="sample" style="margin-top: -0.4em; line-height: 1.3em; font-size: 0.75em;">
+# ip -6 addr show eth0
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:16:17:18:ed:96 brd ff:ff:ff:ff:ff:ff
+    inet6 2001:db8::a9a7:9c40:8e<span id="highlight">1a:9a8a</span>/64 scope global temporary dynamic
+       valid_lft 86398sec preferred_lft 14398sec
+    inet6 2001:db8::216:17ff:fe<span id="highlight">18:ed96</span>/64 scope global dynamic
+       valid_lft 86398sec preferred_lft 14398sec
+    inet6 fe80::216:17ff:fe<span id="highlight">18:ed96</span>/64 scope link
+       valid_lft forever preferred_lft forever
+
+#  ip -6 maddr show eth0
+2:      eth0
+        inet6 ff02::1:ff<span id="highlight">1a:9a8a</span>
+        inet6 ff02::fb
+        inet6 ff02::202
+        inet6 ff02::1:ff<span id="highlight">18:ed96</span> users 2
+        inet6 ff02::1
+        inet6 ff01::1
+            </pre>
+          </section>
+        </section>
+
+<!-- DNS ======================================================================================================================================== -->
+
+        <section>
+          <section>
+            <h1>IPv6 Basics</h1>
+            <h2>DNS</h3>
+          </section>
+
+          <section>
+            <!-- header -->
+            <div class="ipv4 col-100 row-10 top header left">
+              <h2>IPv4</h2>
+            </div>
+            <!-- content -->
+            <div class="ipv4 col-100 row-40 middle content left wrapper">
+              <div class="text-box">
+                <h1 class="fragment visible" data-fragment-index="0">A</h1>
+                <pre class="fragment visible" data-fragment-index="1">example.com.   IN   A  192.168.0.1</pre>
+              </div>
+            </div>
+            <div class="ipv6 col-100 row-10 middle header left">
+              <h2>IPv6</h2>
+            </div>
+            <div class="ipv6 col-100 row-40 bottom content left wrapper">
+              <div class="text-box">
+                <h1 class="fragment visible" data-fragment-index="00">AAAA</h1>
+                <pre class="fragment visible" data-fragment-index="1">example.com.   IN   AAAA  2001:db8::1</pre>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <!-- header -->
+            <div class="ipv4 col-100 row-10 top header left">
+              <h2>IPv4</h2>
+            </div>
+            <!-- content -->
+            <div class="ipv4 col-100 row-40 middle content left wrapper">
+              <div class="text-box">
+                <h1 class="fragment visible" data-fragment-index="0">PTR</h1>
+                <pre class="fragment visible" data-fragment-index="1">1.0.168.192.in-addr.arpa.  IN PTR example.com.</pre>
+              </div>
+            </div>
+            <div class="ipv6 col-100 row-10 middle header left">
+              <h2>IPv6</h2>
+            </div>
+            <div class="ipv6 col-100 row-90 bottom content left wrapper">
+              <div class="text-box">
+                <h1 class="fragment visible" data-fragment-index="0">PTR</h1>
+                <pre style="font-size: 0.9em; margin-top: -40px" class="fragment visible current-visible" data-fragment-index="1">1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.\
+0.0.0.0.0.0.0.0.8.b.d.0.1.0.0.2.\
+ip6.arpa.  IN   PTR   example.com.</pre>
+                <pre style="font-size: 0.47em; margin-top: -60px;" class="fragment visible current-visible" data-fragment-index="2">1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.b.d.0.1.0.0.2.ip6.arpa.  IN   PTR   example.com.</pre>
+                <p class="pad">&nbsp;</p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <!-- header -->
+            <div data-fragment-index="1" class="fragment visible" style="z-index: 10; position: absolute; top: 34%; left: 0; width: 100%;">
+              <h1 style="font-size: 8em;">=</h1>
+            </div>
+            <div class="ipv4 col-50 row-10 top header left">
+              <h2>IPv4</h2>
+            </div>
+            <div class="ipv6 col-50 row-10 top header right">
+              <h2>IPv6</h2>
+            </div>
+            <!-- content -->
+            <div class="ipv4 col-50 row-90 bottom content left wrapper">
+              <div style="padding-top: 0.2em;" class="text-box">
+                <h2 class="fragment visible" data-fragment-index="0">CNAME</h2>
+                <h2 class="fragment visible" data-fragment-index="0">NS</h2>
+                <h2 class="fragment visible" data-fragment-index="0">MX</h2>
+                <h2 class="fragment visible" data-fragment-index="0">TXT</h2>
+                <h2 class="fragment visible" data-fragment-index="0">SRV</h2>
+                <h2 class="fragment visible" data-fragment-index="0">SPF</h2>
+              </div>
+            </div>
+            <div class="ipv6 col-50 row-90 bottom content right wrapper">
+              <div style="padding-top: 0.2em;" class="text-box">
+                <h2 class="fragment visible" data-fragment-index="1">CNAME</h2>
+                <h2 class="fragment visible" data-fragment-index="1">NS</h2>
+                <h2 class="fragment visible" data-fragment-index="1">MX</h2>
+                <h2 class="fragment visible" data-fragment-index="1">TXT</h2>
+                <h2 class="fragment visible" data-fragment-index="1">SRV</h2>
+                <h2 class="fragment visible" data-fragment-index="1">SPF</h2>
+              </div>
+            </div>
+          </section>
+
+          <section data-background="#000">
+            <h2 style="margin-top: -0.8em;">DNS Zone File Sample</h2>
+            <pre class="sample" style="margin-top: -0.4em; font-size: 0.8em;">
+$TTL 3600  ; Default TTL
+bun.ch. IN SOA asterix.bun.ch. hostmaster.bun.ch. (
+        2015041801  ; serial
+        ...
+        )
+
+$ORIGIN bun.ch.
+         IN   NS       asterix.bun.ch.
+         IN   NS       c.ns.buddyns.com.
+
+         IN   MX   10  asterix.bun.ch.
+
+bun.ch.  IN   A        178.77.97.122
+asterix  IN   A        178.77.97.122
+
+<span id="highlight">bun.ch.  IN   AAAA     2a01:488:66:1000:b24d:617a:0:1</span>
+<span id="highlight">asterix  IN   AAAA     2a01:488:66:1000:b24d:617a:0:1</span>
+
+mail     IN   CNAME    asterix
+www      IN   CNAME    asterix
+
+bun.ch.  IN   TXT      "v=spf1 +mx -all"
+bun.ch.  IN   SPF      "v=spf1 +mx -all"
+            </pre>
+          </section>
+        </section>
+
+<!-- Dual Stack ======================================================================================================================================== -->
+
+        <section>
+          <section>
+            <h1>Dual Stack</h1>
+          </section>
+
+          <section>
+            <h2>All Modern OS' support both</h2>
+            <h1>IPv4 &amp; IPv6</h1>
+          </section>
+          <section>
+            <h2>If both Stacks are configured</h2>
+            <h1>IPv6 gets<br />precedence<br />over IPv4<sup>*</sup></h1>
+          </section>
+          <section>
+            <h1>Demo</h1>
+            <h1><i class="fa fa-spinner fa-spin"></i></h1>
+          </section>
+        </section>
+
+<!-- Resources ======================================================================================================================================== -->
+
+        <section>
+          <section>
+            <h1>Resources</h1>
+            <h2>Certification</h2>
+            <h3><a href="https://ipv6.he.net/certification/">Hurricane Electric Free IPv6 Certification</a></h1>
+            <h2>Meetups</h2>
+            <h3><a href="ttp://www.swissipv6council.ch/">Swiss IPv6 Council</a></h3>
+          </section>
+        </section>
+      </div>
+    </div>
+
+<!-- Script =========================================================================================================================================== -->
 
 		<script src="dist/reveal.js"></script>
 		<script src="plugin/notes/notes.js"></script>
