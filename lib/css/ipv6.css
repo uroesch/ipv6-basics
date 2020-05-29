@@ -1,5 +1,18 @@
 /* IPv6 presentation with puzzle.ch colors */
 
+/*********************************************
+ * GLOBAL STYLES
+ *********************************************/
+:root {
+  --background-color: #1a5996;
+  --main-font-size: 34px;
+}
+
+.reveal-viewport {
+  background: #1a5996;
+  background-color: #1a5996;
+}
+
 body {
   background: none repeat scroll 0% 0% #1a5996;
 }
