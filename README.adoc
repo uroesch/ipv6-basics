@@ -1,0 +1,42 @@
+= IPv6 Basic
+:author: Urs Roesch
+:git-user: uroesch
+:icons: font
+:imagesdir: Other/Images
+ifdef::env-gitlab[]
+:git-base-url: https://gitlab.com/{git-user}
+endif::env-gitlab[]
+ifdef::env-github[]
+:git-base-url: https://github.com/{git-user}
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::env-github[]
+:doctype: book
+
+IPv6 basics presentation written in https://github.com/hakimel/reveal.js/[
+reveal.js].
+
+IPv6, or Internet Protocol version 6, is the latest version of the Internet
+Protocol (IP) that allows devices on the Internet to communicate with each.
+IPv6 was designed to replace IPv4, which has been in use for decades and is
+becoming outdated due to the limited number of available IP addresses. Some
+key differences between IPv4 and IPv6 include:
+
+The presentation covers the differences between IPv4 and IPv6 when ever
+possible in side by side slides.
+
+Other Topics covered include:
+
+* The IPv6 address format with its hex representation.
+* Localhost addresses in IPv6.
+* An introduction to the link local address and stateless autoconfiguration.
+* IPv6 network boundaries.
+* High level overview of routing.
+* Some words about the protocol comparte to IPv4.
+* The new AAAA DNS record and the format of the PTR.
+* A look at dual stack operation.
+
+// vim: set colorcolumn=80 textwidth=80 : #spell spelllang=en_us :
